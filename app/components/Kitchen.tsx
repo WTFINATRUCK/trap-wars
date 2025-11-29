@@ -8,9 +8,13 @@ import DopeWarsGame from "./DopeWarsGame";
 import InstructionsModal from "./InstructionsModal";
 import { getReferralStats, getReferralLink, checkAndRegisterReferralFromUrl } from "@/lib/referralUtils";
 
-export default function Kitchen() {
+interface KitchenProps {
+    initialTab?: "game" | "leaderboard" | "vault";
+}
+
+export default function Kitchen({ initialTab = "game" }: KitchenProps) {
     const { publicKey } = useWallet();
-    const [activeTab, setActiveTab] = useState<"game" | "leaderboard" | "vault">("game");
+    const [activeTab, setActiveTab] = useState<"game" | "leaderboard" | "vault">(initialTab);
     const [hasSavedGame, setHasSavedGame] = useState(false);
     const [stakedAmount, setStakedAmount] = useState(0);
     const [showInstructions, setShowInstructions] = useState(false);
