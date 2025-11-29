@@ -1,0 +1,227 @@
+Create a complete Next.js 16 landing page for "TRAP WARS" - a Solana blockchain game.
+
+## EXACT STRUCTURE & ROUTES
+
+Create these components with EXACT links:
+
+### Navigation (Sticky Header)
+- Logo: "TRAP WARS" (bold, purple-to-pink gradient)
+- Links: 
+  * "Play" → href="/game"
+  * "Leaderboard" → href="/leaderboard"  
+  * "How to Play" → scroll to #how-it-works section
+  * "Admin" → href="/admin"
+- Wallet button (top right): "Connect Wallet" (purple glow, uses @solana/wallet-adapter-react)
+
+### Hero Section
+- **Headline**: "TRAP WARS" (massive, bold, glitch effect)
+- **Tagline**: "Code is Law. Built for the Culture."
+- **Description**: "The classic 1990s street economics game reimagined on Solana. Buy low, sell high across NYC. 30 days to make your fortune."
+- **CTA Buttons**:
+  * Primary: "PLAY NOW" → href="/game" (large, glowing green)
+  * Secondary: "How to Play" → Opens instructions modal (onclick handler, outlined button)
+- **Background**: Dark with subtle NYC skyline silhouette, floating graffiti icons (💰, 🎲, 👑)
+
+### Features Section (id="how-it-works")
+Grid of 3 cards:
+
+**Card 1: "The Hustle"**
+- Icon: 💰
+- Title: "30 Days to Glory"
+- Text: "Buy low, sell high across 5 NYC boroughs (Bronx, Brooklyn, Manhattan, Queens, Staten Island). Dodge cops and muggers. Stack your profits. You start with $2,000 and 30 days to become a legend."
+
+**Card 2: "The Ranks"** 
+- Icon: 👑
+- Title: "Stake to Dominate"
+- Text: "Stake your earnings to unlock ranks from 🐀 Street Rat to 💎 Godfather. Higher ranks give you better sell multipliers (up to 1.20x) and protection from police in your territories."
+
+**Card 3: "The Code"**
+- Icon: ⛓️
+- Title: "On-Chain Forever"
+- Text: "Your wallet is your save file. Everything lives on Solana. No admins can touch your score. No rollbacks. No central servers. Code is law. Your achievements are permanent."
+
+### Game Mechanics Section
+Title: "How It Works"
+
+4 columns showing:
+1. **"Buy Products"** - Icon: 💊 - "Buy when prices are low"
+2. **"Travel NYC"** - Icon: 🗺️ - "Move between boroughs for better deals"  
+3. **"Sell High"** - Icon: 💸 - "Maximize profits at peak prices"
+4. **"Stake & Rank"** - Icon: ⭐ - "Lock earnings to unlock power"
+
+### Tokenomics Section
+Title: "$TRAP Token"
+
+4 stat cards in grid:
+- **Supply**: "1,000,000,000" (1 Billion)
+- **House Edge**: "5%" (Fees fund the vault)
+- **Staking APY**: "Variable" (From vault fees)
+- **Referral Bonus**: "0.5%" (Passive income)
+
+Include small recharts bar chart showing token distribution (stylized, neon colors)
+
+### Referral Program Section (Dark green background)
+- Title: "Build Your Empire"
+- Subtitle: "Earn 0.5% of Every Player You Refer"
+- Text: "Share your referral link. When friends play and stake $100+, you earn 0.5% of their game activity. Forever. No cap. No expiration. Pure passive income."
+- CTA: "Get Your Link" → href="/game" (connects wallet first)
+- Visual: Show example calculation (10 refs × $1000 staked = $50 passive)
+
+### Leaderboard Preview Section
+Title: "Top Hustlers 🏆"
+
+Table showing top 5:
+```
+Rank | Player                    | Score        | Rank Badge
+1    | 7xJK...f3Da              | $125,430     | 💎 Godfather
+2    | 9aLp...2bXz              | $98,250      | 👑 Kingpin  
+3    | 3cNm...1aQw              | $76,900      | 💼 Hustler
+4    | 5dPq...4cRt              | $64,120      | 💼 Hustler
+5    | 8eRs...7dYu              | $52,850      | 🐀 Street Rat
+```
+
+Use glowing purple text for #1, pink for #2, cyan for #3
+Link: "View Full Leaderboard" → href="/leaderboard"
+
+### Footer
+**Quote**: "No VCs. No roadmap promises. No hype. Just a game that respects your time and pays in real value."
+
+**Subtext**: "Built by anonymous devs who remember when games were actually fun. Code is law."
+
+**Links** (3 columns):
+Column 1 - Game:
+- "Play Now" → /game
+- "Leaderboard" → /leaderboard
+- "How to Play" → /game
+- "Referral Program" → /game
+
+Column 2 - Resources:
+- "Documentation" → /docs
+- "Token Info" → #tokenomics (scroll)
+- "Admin Panel" → /admin  
+- "GitHub" → https://github.com/trapwars
+
+Column 3 - Community:
+- "Twitter/X" → https://twitter.com/trapwars
+- "Discord" → https://discord.gg/trapwars
+- "Telegram" → https://t.me/trapwars
+
+**Legal**: "Code is law. Play at your own risk. This is not financial advice." (tiny text, gray)
+
+---
+
+## DESIGN SYSTEM
+
+### Colors
+- Background: #000000 (pure black)
+- Sections: #0a0a0a, #111111 (very dark grays)
+- Primary gradient: #9333EA (purple) to #EC4899 (hot pink)
+- Accent 1: #06B6D4 (cyan)
+- Accent 2: #10B981 (neon green)
+- Accent 3: #FBBF24 (electric yellow)
+- Text: #FFFFFF (white), #9CA3AF (gray-400)
+
+### Typography
+- Headings: font-bold, tracking-tight
+- Logo: tracking-tighter, font-extrabold
+- Body: font-normal, leading-relaxed
+- Monospace for addresses: font-mono
+
+### Effects
+- All buttons have subtle glow on hover
+- Cards lift and increase glow on hover
+- Smooth scroll behavior
+- Fade-in animations on scroll (use framer-motion or CSS)
+- Parallax on hero (background moves slower)
+- Grainy texture overlay (opacity: 0.05)
+
+### Components to Use
+- Use Radix UI components (@radix-ui/react-*)
+- Button component with variants
+- Card component for feature cards
+- Navigation Menu for header
+- Separator between sections
+- Toast notifications (using sonner)
+- Scroll Area for any long lists
+
+---
+
+## TECHNICAL REQUIREMENTS
+
+**Framework**: Next.js 16 (app directory)
+**Styling**: Tailwind CSS 4
+**Animations**: CSS animations + tailwindcss-animate
+**Icons**: lucide-react
+**Charts**: recharts (for tokenomics visualization)
+**UI Library**: Radix UI
+**Wallet**: Include wallet button placeholder (will integrate @solana/wallet-adapter-react later)
+
+**File Structure**:
+- app/page.tsx (this landing page)
+- components/ui/* (all Radix components)
+- Use TypeScript
+- Mobile responsive (stack cards vertically on mobile)
+
+---
+
+## MOBILE RESPONSIVE
+
+- Hero: Stack buttons vertically on mobile
+- Features: 1 column on mobile, 3 columns on desktop
+- Navigation: Hamburger menu on mobile
+- Tables: Horizontal scroll on mobile
+- Font sizes scale down 20% on mobile
+- Maintain all glow effects
+
+---
+
+## KEY INTERACTIONS
+
+**Hover States**:
+- Buttons: Increase glow, lift slightly
+- Cards: Lift 4px, increase border glow
+- Links: Neon underline animation
+- Logo: Subtle glitch effect
+
+**Click Actions**:
+- All CTAs go to /game
+- Nav links work correctly
+- Wallet button shows "Connect Wallet" placeholder
+- External links open in new tab (rel="noopener noreferrer")
+
+---
+
+## COPY/VERBIAGE RULES
+
+Use this exact tone:
+- Direct, no BS
+- Street-level authentic
+- Zero corporate jargon
+- "Code is law" philosophy
+- Built by the culture, for the culture
+- Emphasize: permissionless, transparent, on-chain
+- No promises, just facts
+
+Example phrases to include:
+- "No VC backing. No token unlocks dumping on you."
+- "If it's not on-chain, it didn't happen."
+- "Your wallet is your resume."
+- "Play for the culture, not the hype."
+
+---
+
+## FINAL TOUCHES
+
+- Add subtle grain texture overlay (very subtle)
+- Smooth scroll between sections
+- Animate numbers counting up when scrolled into view
+- Pulsing glow on primary CTA
+- Add micro-interactions (button press effects)
+- Include "Copy to clipboard" for any shareable links
+- Show toast notifications on actions
+
+**Vibe Check**: This should feel like a 90s hacker and a graffiti artist built a Solana game. Dark, authentic, zero fluff. Street credibility over corporate polish.
+
+---
+
+Generate the complete landing page component with all sections, proper routing, and the exact copy specified above.
